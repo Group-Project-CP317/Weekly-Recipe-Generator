@@ -6,16 +6,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Link css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'main.css' %}">
+
+    <!-- Link script -->
+    <script type="text/javascript" src="{% static 'script.js' %}"></script>
+
     <title>Login</title>
 </head>
 <body>
-    <form method="POST">
-        {% csrf_token %}
+    <div class="login-page">
+        <h1 class="title">Weekly Recipe Generator</h1>
+        <div class="container container--login">
+            <h2>Login</h2>
+            
+            <form  method="POST" class="login-form">
+                {% csrf_token %}
+            
+                <input type="email" class="inputField" name="email" placeholder="Email" required>
+                <input type="password" class="inputField" name="password" placeholder="Password" required>
+                
+                <button class="button" type="submit">Login</button>
 
-        <input type="email" name="email" placeholder="Email" required>
-        <input type="password" name="password" placeholder="Password" required>
-
-        <button type="submit">login</button>
-    </form>
+                <h3>Need an account? Create one <a href="{% url 'register' %}">here</a></h1>
+            </form>
+        </div>
+    </div>
 </body>
 </html>
