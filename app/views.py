@@ -73,3 +73,16 @@ def logout_view(request):
     logout(request)
 
     return redirect('home')
+
+
+# Profile View
+def profile_view(request):
+    user = request.user
+
+    context = {
+        'user': user
+    }
+
+    template_name = 'profile.html'
+
+    return render(request, template_name, context)

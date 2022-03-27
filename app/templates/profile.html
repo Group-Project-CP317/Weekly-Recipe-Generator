@@ -1,0 +1,49 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Link css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'main.css' %}">
+
+    <!-- Link script -->
+    <script type="text/javascript" src="{% static 'script.js' %}"></script>
+
+    <title>Profile</title>
+</head>
+<body>
+    <div class="profile-page">
+        <div class="leftcolumn">  
+            <div class="leftcolumn">
+                <div class="card">
+                    <div class="fakeimg" style="width:48;height:48px;">Image</div>
+                </div>
+                <div class="card">
+                    <h1>Bio: Trying to gte better at cooking</h1>
+                    <h2>Location: Waterloo, Ontario</h2>
+                    <h3>Birthday: April 20th, 2000</h3>
+                    <h4>Joined on: March 20th, 2022</h4>
+                    <h5>Skill Level: Beginner</h5>
+                  </div>
+            </div>
+            <div class="rightcolumn">
+                <div class="leftcolumn">
+                    <h6>My Ingredients</h6>
+                </div>
+                <div class="rightcolumn">
+                    <div class="card">
+                        <h7>Favourite Recipes</h7>
+                    </div>
+                    <div class="card">
+                        <h8>My Recipes</h8>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
