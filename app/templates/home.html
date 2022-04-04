@@ -7,10 +7,4 @@
 <!-- Homepage Content -->
 {% block content %}
 
-{% if user.is_authenticated %}
-    <h3>{{user.username}} <a href="{% url 'logout' %}">Logout</a></h3>
-{% else %}
-    <h3>not logged in</h3> <a href="{% url 'register' %}">Register</a> <a href="{% url 'login' %}">Login</a>
-{% endif %}
-
 {% endblock content %}

@@ -1,3 +1,4 @@
+/* Site Styling */
 * {
     box-sizing: border-box;
 }
@@ -10,10 +11,24 @@ body, html {
 
 a {
     color: initial;
+    text-decoration: none;
 }
 
 h3 {
     font-size: 14px;
+}
+
+.navbar {
+    height: 10%;
+    margin: auto 2%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.main {
+    height: 90%;
 }
 
 /* Components */
@@ -32,6 +47,12 @@ h3 {
     text-align: center;
     border-radius: 20px;
     border: solid #000000 3px;
+}
+
+.inputField--search {
+    width: 400px;
+    text-align: left;
+    padding-left: 5%;
 }
 
 .button {
@@ -116,3 +137,6 @@ h3 {
     justify-content: center;
     gap: 7%;
 }
+
+/* Home */
+

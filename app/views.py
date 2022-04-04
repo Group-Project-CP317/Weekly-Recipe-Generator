@@ -74,7 +74,6 @@ def logout_view(request):
 
     return redirect('home')
 
-
 # Profile View
 def profile_view(request):
     user = request.user
@@ -84,5 +83,17 @@ def profile_view(request):
     }
 
     template_name = 'profile.html'
+
+    return render(request, template_name, context)
+
+# Create Recipe View
+def create_recipe_view(request):
+    user = request.user
+
+    context = {
+        'user': user
+    }
+
+    template_name = 'create-recipe.html'
 
     return render(request, template_name, context)
