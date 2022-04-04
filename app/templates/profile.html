@@ -1,21 +1,11 @@
+{% extends "base.html" %}
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Title -->
+{% block title %} Profile {% endblock title %}
 
-    <!-- Link css -->
-    <link rel="stylesheet" type="text/css" href="{% static 'main.css' %}">
-
-    <!-- Link script -->
-    <script type="text/javascript" src="{% static 'script.js' %}"></script>
-
-    <title>Profile</title>
-</head>
-<body>
+<!-- Profile Content -->
+{% block content %}
     <div class="profile-page">
         <div class="leftcolumn">  
             <div class="leftcolumn">
@@ -28,7 +18,7 @@
                     <h3>Birthday: April 20th, 2000</h3>
                     <h4>Joined on: March 20th, 2022</h4>
                     <h5>Skill Level: Beginner</h5>
-                  </div>
+                </div>
             </div>
             <div class="rightcolumn">
                 <div class="leftcolumn">
@@ -45,5 +35,4 @@
             </div>
         </div>
     </div>
-</body>
-</html>
+{% endblock content %}
