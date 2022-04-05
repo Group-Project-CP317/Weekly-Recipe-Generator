@@ -7,9 +7,30 @@
 <!-- Homepage Content -->
 {% block content %}
 
-<img src="{% static 'images/homepagebg5.jpg' %}" alt="My image" class="home-banner">
+    <img src="{% static 'images/homepagebg5.jpg' %}" alt="My image" class="home-banner">
 
-<h1>Featured Recipes</h1>
-<div class="greenStrip"></div>
+    <h1>Featured Recipes</h1>
+    <div class="greenStrip"></div>
+
+    <div class="featured">
+        {% with class='recipe featured-recipe' %}
+            {% include "components/recipe-card.html"  %}
+        {% endwith %}
+        {% with class='recipe featured-recipe' %}
+            {% include "components/recipe-card.html"  %}
+        {% endwith %}
+        {% with class='recipe featured-recipe' %}
+            {% include "components/recipe-card.html"  %}
+        {% endwith %}
+        {% with class='recipe featured-recipe' %}
+            {% include "components/recipe-card.html"  %}
+        {% endwith %}
+        {% with class='recipe featured-recipe' %}
+            {% include "components/recipe-card.html"  %}
+        {% endwith %}
+        {% with class='recipe featured-recipe' %}
+            {% include "components/recipe-card.html"  %}
+        {% endwith %}
+    </div>
 
 {% endblock content %}
