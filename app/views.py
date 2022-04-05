@@ -1,8 +1,8 @@
-import email
-import re
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import login, authenticate, logout
 from app.forms import LoginForm, RegisterForm, UpdateProfileForm
+from app.models import Recipe
+from django.db.models import Q
 
 # Create your views here.
 
@@ -138,7 +138,19 @@ def recipe_view(request):
 # Search Results View
 def search_results_view(request):
     user = request.user
+
+    if request.method == "POST":
+        search_value = request.POST['search_value']
+
+        search_results = Recipe.objects.filter(
+        Q(name__icontains=search_value)
+        )
+
     context = {
-        'user':user
+        'user':user,
+        'search_value': search_value,
+        'search_results': search_results
     }
+    print(search_results)
+
     return render(request,'search-results.html',context)
