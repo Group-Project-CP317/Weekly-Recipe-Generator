@@ -3,7 +3,12 @@ from django.contrib.auth import login, authenticate, logout
 from app.forms import LoginForm, RegisterForm, UpdateProfileForm
 from app.models import Recipe
 from django.db.models import Q
+from app import api
+import json 
 
+api_obj = api.Api()
+
+recipe = api.Recipe()
 # Create your views here.
 
 # Homepage View
@@ -133,11 +138,41 @@ def create_recipe_view(request):
 
 # Recipe View
 def recipe_view(request):
+    
+
+    #Test data because of api limits
     user = request.user
+    data = recipe.read_json("SRPASTA1NNNNN_INFO")
+    recipe_title = data["title"]
+    summary = data["summary"]
+    steps = data["instructions"]
+    cooking_time = data["cookingMinutes"]
+    prep_time = data["preparationMinutes"]
+    more_info = data["sourceUrl"]
+    ingredents_list = data['extendedIngredients']
+    ingredents= []
+
+    for i in range(len(ingredents_list)):
+       
+        ingredents.append(ingredents_list[i]['original'])
+
+    steps_list = steps.split('.')
+
+    steps_list.pop() #gets rid of a '' at the end of the list
+
     context = {
-        'user':user
+        'user':user,
+        'recipe_title':recipe_title,
+        'summary':summary,
+        'steps':steps_list ,
+        'cooking_time':cooking_time,
+        'prep_time':prep_time,
+        'more_info':more_info,
+        'ingredents':ingredents
+        
     }
-    return render(request,'recipe.html',context)\
+   
+    return render(request,'recipe.html',context)
 
 # Search Results View
 def search_results_view(request):
