@@ -6,33 +6,34 @@
 
 <!-- Profile Content -->
 {% block content %}
-    <div class="profile-page">
-        <div class="leftcolumn">  
-            <div class="leftcolumn">
-                <div class="card">
-                    <div class="fakeimg" style="width:48;height:48px;">Image</div>
-                </div>
-                <div class="card">
-                    <h1>Bio: Trying to gte better at cooking</h1>
-                    <h2>Location: Waterloo, Ontario</h2>
-                    <h3>Birthday: April 20th, 2000</h3>
-                    <h4>Joined on: March 20th, 2022</h4>
-                    <h5>Skill Level: Beginner</h5>
-                </div>
+
+<div class="profile-page">
+    <div class="profile-left">
+        <img src="{% static 'images/default.jpg' %}" alt="" class="profile-img">
+        <h1 class="profile-name">{{ user }}</h1>
+        <div class="profile-info">
+            <h1>Bio: Trying to get better at cooking</h1>
+            <h2>Location: Waterloo, Ontario</h2>
+            <h3>Birthday: April 20th, 2000</h3>
+            <h4>Joined on: March 20th, 2022</h4>
+            <h5>Skill Level: Beginner</h5>
+        </div>
+    </div>
+    <div class="profile-right">
+        <div class="profile-extras">
+            <div class="profile-ingredients">
+                <h8 class="profile-titles">My Ingredients</h6>
             </div>
-            <div class="rightcolumn">
-                <div class="leftcolumn">
-                    <h6>My Ingredients</h6>
+            <div class="extras-right">
+                <div class="profile-favorites">
+                    <h8 class="profile-titles">Favourite Recipes</h7>
                 </div>
-                <div class="rightcolumn">
-                    <div class="card">
-                        <h7>Favourite Recipes</h7>
-                    </div>
-                    <div class="card">
-                        <h8>My Recipes</h8>
-                    </div>
+                <div class="profile-my-recipes">
+                    <h8 class="profile-titles">My Recipes</h8>
                 </div>
             </div>
         </div>
     </div>
+</div>
+    
 {% endblock content %}
