@@ -10,9 +10,13 @@
 <div class="profile-page">
     <div class="profile-left">
         <img src="{% static 'images/default.jpg' %}" alt="" class="profile-img">
-
-        <h1 class="profile-name">Name: {{ user.first_name }} {{ user.last_name }}</h1>
         
+        <h1 class="profile-name">Name:
+            {% if user.first_name and user.last_name %}
+                {{ user.first_name }} {{ user.last_name }}
+            {% endif %}
+        </h1>
+
         <div class="profile-info">
             <h2>Username: {{ user }}</h1>
             <h2>Bio: {{ user.bio }}</h1>

@@ -95,6 +95,7 @@ def edit_profile_view(request):
         form = UpdateProfileForm(request.POST, instance=request.user)
         if form.is_valid():
             form.save()
+            return redirect('profile')
     else:
         form = UpdateProfileForm(
             initial= {
