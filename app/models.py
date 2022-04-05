@@ -13,7 +13,7 @@ class Recipe(models.Model):
     is_vegan = models.BooleanField(default=False, null=True)
     is_glutenFree = models.BooleanField(default=False, null=True)
     calories = models.PositiveIntegerField(null=True)
-    image = models.ImageField(upload_to = "/recipeImg", blank=True, null=True)
+    image = models.ImageField(upload_to = "recipeImg", blank=True, null=True)
 
     def __str__(self):
         return self.name
