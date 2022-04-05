@@ -9,24 +9,20 @@
 
 <div class="recipe--page">
     <div class="recipe-left">
-        {% with name=recipe_title %}
+        {% with name=recipe.name calories=recipe.calories recipe_id=recipe.id %}
             {% include "components/recipe-card.html"  %}
         {% endwith %}
     </div>
     <div class="recipe-middle">
         <div class="recipe-steps">
             <h1 class="box-middle">Steps</h1>
-            {% for i in steps %}
-                <li>{{i}}</li>
-            {% endfor %}
+                {{ recipe.steps|linebreaks }}
         </div>
     </div>
     <div class="recipe-right">
         <div class="recipe-ingredients">
             <h1 class="box-middle">Ingredients</h1>
-            {% for i in ingredents %}
-                <li>{{i}}</li>
-            {% endfor %}
+            {{ recipe.ingredients|linebreaks }}
         </div>
     </div>
 </div>

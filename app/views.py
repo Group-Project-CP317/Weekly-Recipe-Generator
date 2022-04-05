@@ -154,54 +154,14 @@ def create_recipe_view(request):
     return render(request, template_name, context)
 
 # Recipe View
-def recipe_view(request):
+def recipe_view(request, recipe_id):
     
-
-    #Test data because of api limits
     user = request.user
-    data = recipe.read_json("SRPASTA1NNNNN_INFO")
-    nutrition_data = recipe.read_json("SRPASTA1NNNNN_N")
-    
-    recipe_title = data["title"]
-    summary = data["summary"]
-    steps = data["instructions"]
-    cooking_time = data["cookingMinutes"]
-    prep_time = data["preparationMinutes"]
-    more_info = data["sourceUrl"]
-    ingredents_list = data['extendedIngredients']
-    recipe_img = data['image']
-    calories = nutrition_data['calories']
-    carbs = nutrition_data['carbs']
-    fat = nutrition_data['fat']
-    protein = nutrition_data['protein']
-
-
-    ingredents= []
-
-   
-
-    for i in range(len(ingredents_list)):
-       
-        ingredents.append(ingredents_list[i]['original'])
-
-    steps_list = steps.split('.')
-
-    steps_list.pop() #gets rid of a '' at the end of the list
+    recipe = Recipe.objects.get(id=recipe_id)
 
     context = {
-        'user':user,
-        'recipe_title':recipe_title,
-        'summary':summary,
-        'steps':steps_list ,
-        'cooking_time':cooking_time,
-        'prep_time':prep_time,
-        'more_info':more_info,
-        'ingredents':ingredents,
-        'recipe_img':recipe_img,
-        'calories':calories,
-        'carbs':nutrition_data['fat'],
-        'protein':protein
-        
+        'user': user,
+        'recipe': recipe
     }
    
     return render(request,'recipe.html',context)

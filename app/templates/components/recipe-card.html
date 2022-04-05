@@ -1,10 +1,10 @@
 {% load static %}
 
-<a  class="recipe featured-recipe" href="">
+<a  class="recipe featured-recipe" href="{% url 'recipe' recipe_id %}">
     <div>
         <div class="recipe--bottom">
             <h1 class="recipe-title">{{ name }}</h1>
-            <h1 class="recipe-info">{{ calories }}</h1>
+            <h1 class="recipe-info">{{ calories }} Calories</h1>
         </div>
     </div>
 </a>

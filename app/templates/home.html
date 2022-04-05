@@ -14,7 +14,7 @@
 
     <div class="featured">
         {% for recipe in recipes %}
-            {% with class='recipe featured-recipe' name=recipe.name calories=recipe.calories %}
+            {% with name=recipe.name calories=recipe.calories recipe_id=recipe.id %}
                 {% include "components/recipe-card.html"  %}
             {% endwith %}
         {% endfor %}
