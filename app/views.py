@@ -132,8 +132,12 @@ def create_recipe_view(request):
         form = CreateRecipe(request.POST)
         if form.is_valid():
             recipe = form.save()
-            if request.preference == "Vegan":
+            if request.POST.get("preference") == "Vegan":
                 recipe.is_vegan = True
+            elif request.POST.get("preference") == "Gluton-free":
+                recipe.is_glutenFree = True
+            else:
+                recipe.is_vegan = False
             recipe.author = user
             recipe.save()
             return redirect('/')

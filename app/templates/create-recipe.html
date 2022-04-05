@@ -10,35 +10,35 @@
     <form method="POST">
         {% csrf_token %}
         <label for ="Rname"><b>Recipe name:</b>&emsp;&ensp;</label>
-        <input type="text" id="rname" name="name" class="inputField"><br><br><br>
+        <input type="text" id="rname" name="name" class="inputField inputField-recipe"><br><br><br>
  
         <label for ="Preference"><b>Preference:  </b>&emsp;&ensp;&nbsp;</label>
         <input type="radio" name="preference" id="preference1" value="Non-vegan" required>
         <label for="preference1"><b>Non-Vegan</b></label>
         <input type="radio" name="preference" id="preference2" value="Vegan">
         <label for="preference2"><b>Vegan</b></label>
-        <input type="radio" name="preference" id="preference3" value="Gluton-free">
+        <input type="radio" name="preference" id="preference3" value="Gluton-Free">
         <label for="preference3"><b>Gluton-free</b></label>
         <br><br><br>
  
         <label for ="Uimage"><b>Upload Image:</b></label>&emsp;
-        <button class="button">Select image</button>
+        <button class="button" type="button">Select image</button>
         <br><br><br>
  
         <label for ="Ingredient"><b>Ingredients:</b></label><span class="tab"></span>&nbsp;
-        <input type="text" id="ingredient" name="ingredients" class="inputField inputField-ingredients" required>
+        <textarea type="text" id="ingredient" name="ingredients" class="inputField inputField-ingredients" required></textarea>
         <br><br>
 
         <label for ="Ingredient"><b>Calories:</b></label><span class="tab"></span>&nbsp;&emsp;
-        <input type="text" id="ingredient" name="calories" class="inputField">
+        <input type="text" id="ingredient" name="calories" class="inputField inputField-recipe" required>
         <br><br>
 
         <label for ="Cuisine"><b>Type of cuisine: </b></label>&nbsp;&nbsp;
-        <input type="text" id="cuisine" name="type" class="inputField" required>
+        <input type="text" id="cuisine" name="type" class="inputField inputField-recipe" required></textarea>
         <br><br><br>
  
         <label for ="Steps"><b>Steps: </b></label><span class="tab"></span>&emsp;&emsp;
-        <input type="text" id="step" name="steps" class="inputField inputField-steps" required><span class="tab"></span><span class="tab"></span>
+        <textarea type="text" id="step" name="steps" class="inputField inputField-steps" required></textarea><span class="tab"></span><span class="tab"></span>
 
         <button class="add-recipe-button" style="margin: 50px; " type="submit">Add Recipe</button>
     </form>

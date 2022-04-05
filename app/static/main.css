@@ -427,8 +427,31 @@ h3 {
     border: solid #8BB18F;
     color: #ffffff;
 }
+
+.add-recipe-button:hover {
+    cursor: pointer;
+}
  
 .tab{
     display:inline-block;
     margin-left: 40px;
+}
+
+.inputField-steps {
+    height: 100px;
+    vertical-align: text-top;
+    padding: 1%;
+    text-align: left;
+}
+
+.inputField-ingredients {
+    height: 100px;
+    vertical-align: text-top;
+    padding: 1%;
+    text-align: left;
+}
+
+.inputField-recipe{
+    text-align: left;
+    padding-left: 1%;
 }
