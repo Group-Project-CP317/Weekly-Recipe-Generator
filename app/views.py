@@ -97,3 +97,10 @@ def create_recipe_view(request):
     template_name = 'create-recipe.html'
 
     return render(request, template_name, context)
+
+def recipe_view(request):
+    user = request.user
+    context = {
+        'user':user
+    }
+    return render(request,'recipe.html',context)
