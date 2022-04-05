@@ -10,3 +10,5 @@ Steps to run the application
 4. make migration changes - python manage.py
 5. run the server (website will load at (https://127.0.0.1:8000/) - python manage.py runserver
 
+Things that are completed
+- every page of the application is completed by using html and css
