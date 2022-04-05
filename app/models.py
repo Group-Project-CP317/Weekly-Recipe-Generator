@@ -1,21 +1,17 @@
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
 
-#Ingredient Model
-class Ingredient(models.Model):
-    #Ingredient Fields
-    name = models.CharField(max_length=30)
-    amount = models.CharField(max_length=10)
-
-    def __str__(self):
-        return self.name
-
 #Recipe Model
 class Recipe(models.Model):
 
     #Recipe Fields
     name = models.CharField(max_length=30)
-    ingredients = models.ManyToManyField(Ingredient)
+    ingredients = models.TextField(max_length=300)
+    steps = models.TextField(max_length=300)
+    type = models.CharField(max_length=30)
+    is_vegan = models.BooleanField(default=False)
+    is_glutenFree = models.BooleanField(default=False)
+    calories = models.PositiveIntegerField()
 
     def __str__(self):
         return self.name
