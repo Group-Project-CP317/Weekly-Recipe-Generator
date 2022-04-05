@@ -1,10 +1,45 @@
 {% extends "base.html" %}
 {% load static %}
-
+ 
 <!-- Title -->
 {% block title %} Add a Recipe {% endblock title %}
-
+ 
 <!-- Create Recipe Page Content -->
 {% block content %}
-
+<div class="login-page">
+    <form>
+        <label for ="Rname"><b>Recipe name:</b>&emsp;&ensp;</label>
+        <input type="text" id="rname" name="rname" style="background-color: #d1caca; border: solid #d1caca; height: 18px"><br><br><br>
+ 
+        <label for ="Preference"><b>Preference:  </b>&emsp;&ensp;&nbsp;</label>
+        <input type="radio" name="preference" id="preference1" value="Non-vegan">
+        <label for="preference1"><b>Non-Vegan</b></label>
+        <input type="radio" name="preference" id="preference2" value="Vegan">
+        <label for="preference2"><b>Vegan</b></label>
+        <input type="radio" name="preference" id="preference3" value="Gluton-free">
+        <label for="preference3"><b>Gluton-free</b></label>
+        <br><br><br>
+ 
+        <label for ="Uimage"><b>Upload Image:</b></label>&emsp;
+        <input type="button" class="image-button" value="Select image"><br><br><br>
+ 
+        <label for ="Ingredient"><b>Ingredient:</b></label><span class="tab"></span>&nbsp;
+        <input type="text" id="ingredient" name="ingredient" style="background-color: #d1caca; border: solid #d1caca; height: 18px"><span class="tab"></span>
+        <input type="button" class="add-ingredient-button" value="+Add more"><br><br><br>
+ 
+        <label for ="Cuisine"><b>Type of cuisine: </b></label>&nbsp;&nbsp;
+        <input type="text" id="cuisine" name="cuisine" style="background-color: #d1caca; border: solid #d1caca; width: 250px; height: 18px"><span class="tab"></span><b>Portion:</b>
+        <input type="text" id="ingredient" name="ingredient" style="background-color: #d1caca; border: solid #d1caca; width: 100px; height: 18px">
+        <br><br><br>
+ 
+        <label for ="Steps"><b>Steps: </b></label><span class="tab"></span>&emsp;&emsp;
+        <input type="text" id="step" name="step" style="background-color: #d1caca; border: solid #d1caca; height: 18px"><span class="tab"></span>or<span class="tab"></span>
+        <input type="button" class="add-ingredient-button" value="Select pdf"><br><br><br><br>
+ 
+        <button class="discard-button" style="margin: 50px; " type="submit">Discard</button>
+        <button class="add-recipe-button" style="margin: 50px; " type="submit">Add Recipe</button>
+    </form>
+</div>
+   
+ 
 {% endblock content %}

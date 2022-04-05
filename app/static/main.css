@@ -378,3 +378,57 @@ h3 {
     margin: 3% 0 3% 3%;
     width: 450px;
 }
+
+/* Create recipe Page */
+.image-button {
+    width: 200px;
+    height: 22px;
+    min-width: 100px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 21px;
+    background-color: #8BB18F;
+    border: solid #8BB18F;
+    color: #ffffff;
+}
+ 
+.add-ingredient-button{
+    width: 200px;
+    height: 25px;
+    min-width: 100px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 21px;
+    background-color: #8BB18F;
+    border: solid #8BB18F;
+    color: #ffffff;
+}
+ 
+.discard-button{
+    width: 200px;
+    height: 25px;
+    min-width: 100px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 21px;
+    background-color: #8BB18F;
+    border: solid #8BB18F;
+    color: #ffffff;
+}
+ 
+.add-recipe-button{
+    width: 200px;
+    height: 25px;
+    min-width: 100px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 21px;
+    background-color: #8BB18F;
+    border: solid #8BB18F;
+    color: #ffffff;
+}
+ 
+.tab{
+    display:inline-block;
+    margin-left: 40px;
+}
