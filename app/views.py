@@ -116,4 +116,12 @@ def recipe_view(request):
     context = {
         'user':user
     }
-    return render(request,'recipe.html',context)
+    return render(request,'recipe.html',context)\
+
+# Search Results View
+def search_results_view(request):
+    user = request.user
+    context = {
+        'user':user
+    }
+    return render(request,'search-results.html',context)

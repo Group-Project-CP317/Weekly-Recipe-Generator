@@ -20,13 +20,14 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin', admin.site.urls),
     path('', views.home_view, name='home'),
-    path('register/', views.register_view, name='register'),
-    path('login/', views.login_view, name='login'),
-    path('logout/', views.logout_view, name='logout'),
-    path('profile/', views.profile_view, name='profile'),
-    path('edit-profile/', views.edit_profile_view, name='edit-profile'),
+    path('register', views.register_view, name='register'),
+    path('login', views.login_view, name='login'),
+    path('logout', views.logout_view, name='logout'),
+    path('profile', views.profile_view, name='profile'),
+    path('edit-profile', views.edit_profile_view, name='edit-profile'),
+    path('search-results', views.search_results_view, name='search-results'),
     path('recipe',views.recipe_view,name = 'recipe'),
-    path('create-recipe/', views.create_recipe_view, name='create-recipe'),
+    path('create-recipe', views.create_recipe_view, name='create-recipe'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
