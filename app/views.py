@@ -1,7 +1,8 @@
 import email
+import re
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import login, authenticate, logout
-from app.forms import LoginForm, RegisterForm
+from app.forms import LoginForm, RegisterForm, UpdateProfileForm
 
 # Create your views here.
 
@@ -90,8 +91,23 @@ def profile_view(request):
 def edit_profile_view(request):
     user = request.user
 
+    if request.POST:
+        form = UpdateProfileForm(request.POST, instance=request.user)
+        if form.is_valid():
+            form.save()
+    else:
+        form = UpdateProfileForm(
+            initial= {
+                "first_name": request.user.first_name,
+                "last_name": request.user.last_name,
+                "bio": request.user.bio,
+                "location": request.user.location
+            }
+        )
+
     context = {
-        'user': user
+        'user': user,
+        'form': form
     }
 
     template_name = 'edit-profile.html'

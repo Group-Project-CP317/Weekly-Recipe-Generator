@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+
+<!-- Title -->
+{% block title %} Edit Profile {% endblock title %}
+
+<!-- Profile Content -->
+{% block content %}
+
+<div class="edit-profile">
+    <div class="container container--edit">
+        <form action="" class="edit-profile-form" method="POST">
+            {% csrf_token %}
+            
+                <input type="text" class="inputField" name="first_name" placeholder="First Name" required>
+                <input type="text" class="inputField" name="last_name" placeholder="Last Name" required>
+                <input type="text" class="inputField" name="bio" placeholder="Bio" required>
+                <input type="text" class="inputField" name="location" placeholder="Location" required>
+            
+                <button class="button" type="submit">Update</button>
+        </form>
+    </div>
+</div>
+    
+{% endblock content %}

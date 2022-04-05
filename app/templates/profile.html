@@ -11,20 +11,12 @@
     <div class="profile-left">
         <img src="{% static 'images/default.jpg' %}" alt="" class="profile-img">
 
-        {% if  user.first_name and user.last_name %}
-            <h1 class="profile-name">{{ user.first_name }} {{ user.last_name }}</h1>
-        {% else %}
-            <h2>*Name is not set.*</h2>
-        {% endif %}
+        <h1 class="profile-name">Name: {{ user.first_name }} {{ user.last_name }}</h1>
         
         <div class="profile-info">
             <h2>Username: {{ user }}</h1>
-            {% if bio %}
-                <h2>Bio: {{ user.bio }}</h1>
-            {% else %}
-                <h2>Bio: Not set</h2>        
-            {% endif %}
-            <h2>Location: Waterloo, Ontario</h2>
+            <h2>Bio: {{ user.bio }}</h1>
+            <h2>Location: {{ user.location }}</h2>
             <h2>Joined on: {{ user.date_joined|date:"M dS, Y"}}</h4>
             <button class="button" type="submit"><a href="{% url 'edit-profile' %}" class="button">Edit Profile</a></button>
             

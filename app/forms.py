@@ -1,3 +1,4 @@
+from pyexpat import model
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate
@@ -26,3 +27,9 @@ class LoginForm(forms.ModelForm):
 
             if not authenticate(email=email, password=password):
                 raise forms.ValidationError("Invalid email/password")
+
+# Edit Profile Form
+class UpdateProfileForm(forms.ModelForm):
+    class Meta:
+        model = Account
+        fields = ('first_name', 'last_name', 'bio', 'location')
