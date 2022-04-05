@@ -7,12 +7,13 @@
 <!-- Create Recipe Page Content -->
 {% block content %}
 <div class="login-page">
-    <form>
+    <form method="POST">
+        {% csrf_token %}
         <label for ="Rname"><b>Recipe name:</b>&emsp;&ensp;</label>
-        <input type="text" id="rname" name="rname" style="background-color: #d1caca; border: solid #d1caca; height: 18px"><br><br><br>
+        <input type="text" id="rname" name="name" class="inputField"><br><br><br>
  
         <label for ="Preference"><b>Preference:  </b>&emsp;&ensp;&nbsp;</label>
-        <input type="radio" name="preference" id="preference1" value="Non-vegan">
+        <input type="radio" name="preference" id="preference1" value="Non-vegan" required>
         <label for="preference1"><b>Non-Vegan</b></label>
         <input type="radio" name="preference" id="preference2" value="Vegan">
         <label for="preference2"><b>Vegan</b></label>
@@ -21,22 +22,24 @@
         <br><br><br>
  
         <label for ="Uimage"><b>Upload Image:</b></label>&emsp;
-        <input type="button" class="image-button" value="Select image"><br><br><br>
+        <button class="button">Select image</button>
+        <br><br><br>
  
-        <label for ="Ingredient"><b>Ingredient:</b></label><span class="tab"></span>&nbsp;
-        <input type="text" id="ingredient" name="ingredient" style="background-color: #d1caca; border: solid #d1caca; height: 18px"><span class="tab"></span>
-        <input type="button" class="add-ingredient-button" value="+Add more"><br><br><br>
- 
+        <label for ="Ingredient"><b>Ingredients:</b></label><span class="tab"></span>&nbsp;
+        <input type="text" id="ingredient" name="ingredients" class="inputField inputField-ingredients" required>
+        <br><br>
+
+        <label for ="Ingredient"><b>Calories:</b></label><span class="tab"></span>&nbsp;&emsp;
+        <input type="text" id="ingredient" name="calories" class="inputField">
+        <br><br>
+
         <label for ="Cuisine"><b>Type of cuisine: </b></label>&nbsp;&nbsp;
-        <input type="text" id="cuisine" name="cuisine" style="background-color: #d1caca; border: solid #d1caca; width: 250px; height: 18px"><span class="tab"></span><b>Portion:</b>
-        <input type="text" id="ingredient" name="ingredient" style="background-color: #d1caca; border: solid #d1caca; width: 100px; height: 18px">
+        <input type="text" id="cuisine" name="type" class="inputField" required>
         <br><br><br>
  
         <label for ="Steps"><b>Steps: </b></label><span class="tab"></span>&emsp;&emsp;
-        <input type="text" id="step" name="step" style="background-color: #d1caca; border: solid #d1caca; height: 18px"><span class="tab"></span>or<span class="tab"></span>
-        <input type="button" class="add-ingredient-button" value="Select pdf"><br><br><br><br>
- 
-        <button class="discard-button" style="margin: 50px; " type="submit">Discard</button>
+        <input type="text" id="step" name="steps" class="inputField inputField-steps" required><span class="tab"></span><span class="tab"></span>
+
         <button class="add-recipe-button" style="margin: 50px; " type="submit">Add Recipe</button>
     </form>
 </div>

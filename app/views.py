@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import login, authenticate, logout
-from app.forms import LoginForm, RegisterForm, UpdateProfileForm
+from app.forms import LoginForm, RegisterForm, UpdateProfileForm, CreateRecipe
 from app.models import Recipe
 from django.db.models import Q
 from app import api
@@ -128,8 +128,21 @@ def edit_profile_view(request):
 def create_recipe_view(request):
     user = request.user
 
+    if request.POST:
+        form = CreateRecipe(request.POST)
+        if form.is_valid():
+            recipe = form.save()
+            if request.preference == "Vegan":
+                recipe.is_vegan = True
+            recipe.author = user
+            recipe.save()
+            return redirect('/')
+    else:
+        form = UpdateProfileForm()
+
     context = {
-        'user': user
+        'user': user,
+        'form': form
     }
 
     template_name = 'create-recipe.html'
@@ -143,6 +156,7 @@ def recipe_view(request):
     #Test data because of api limits
     user = request.user
     data = recipe.read_json("SRPASTA1NNNNN_INFO")
+    id = recipe.read_json("SRPASTA1NNNNN")["id"]
     recipe_title = data["title"]
     summary = data["summary"]
     steps = data["instructions"]
@@ -150,7 +164,11 @@ def recipe_view(request):
     prep_time = data["preparationMinutes"]
     more_info = data["sourceUrl"]
     ingredents_list = data['extendedIngredients']
+    recipe_img = data['image']
+
     ingredents= []
+
+    recipe.write_json(response= recipe.get_recipe_info_by_id(id = id),key = "SRPASTA1NNNNN_N")
 
     for i in range(len(ingredents_list)):
        

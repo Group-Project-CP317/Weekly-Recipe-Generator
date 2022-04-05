@@ -55,3 +55,9 @@ class Recipe(Api):
         data[key] = json.loads(data[key])
         
         return  data[key]
+
+    def get_recipe_nutrition_by_id(self,id = "535835"):
+        url = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/1003464/nutritionWidget.json"
+
+        response = requests.request("GET", url, headers=self.recipe_api_key_head)
+        return response 
