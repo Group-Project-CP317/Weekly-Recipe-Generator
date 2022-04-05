@@ -13,24 +13,11 @@
     <div class="greenStrip"></div>
 
     <div class="featured">
-        {% with class='recipe featured-recipe' %}
-            {% include "components/recipe-card.html"  %}
-        {% endwith %}
-        {% with class='recipe featured-recipe' %}
-            {% include "components/recipe-card.html"  %}
-        {% endwith %}
-        {% with class='recipe featured-recipe' %}
-            {% include "components/recipe-card.html"  %}
-        {% endwith %}
-        {% with class='recipe featured-recipe' %}
-            {% include "components/recipe-card.html"  %}
-        {% endwith %}
-        {% with class='recipe featured-recipe' %}
-            {% include "components/recipe-card.html"  %}
-        {% endwith %}
-        {% with class='recipe featured-recipe' %}
-            {% include "components/recipe-card.html"  %}
-        {% endwith %}
+        {% for recipe in recipes %}
+            {% with class='recipe featured-recipe' name=recipe.name calories=recipe.calories %}
+                {% include "components/recipe-card.html"  %}
+            {% endwith %}
+        {% endfor %}
     </div>
 
 {% endblock content %}

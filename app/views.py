@@ -10,8 +10,12 @@ from django.db.models import Q
 def home_view(request):
     user = request.user
 
+    #NEED TO UPDATE THIS
+    featured_recipes = Recipe.objects.all()
+
     context = {
-        'user': user
+        'user': user,
+        'recipes': featured_recipes
     }
 
     template_name = 'home.html'
