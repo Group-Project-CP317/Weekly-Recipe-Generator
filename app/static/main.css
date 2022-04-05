@@ -144,7 +144,14 @@ h3 {
     gap: 7%;
 }
 
+/* Home Page */
 
+.home-banner {
+    width: 100%;
+}
+
+
+/* Recipe Page */
 .recipe-page{
     width: 100%;
     height: 100%;
