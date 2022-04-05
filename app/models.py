@@ -5,13 +5,13 @@ from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
 class Recipe(models.Model):
 
     #Recipe Fields
-    name = models.CharField(max_length=30)
-    ingredients = models.TextField(max_length=300)
-    steps = models.TextField(max_length=300)
-    type = models.CharField(max_length=30)
-    is_vegan = models.BooleanField(default=False)
-    is_glutenFree = models.BooleanField(default=False)
-    calories = models.PositiveIntegerField()
+    name = models.CharField(max_length=30, null=True)
+    ingredients = models.TextField(max_length=300, null=True)
+    steps = models.TextField(max_length=300, null=True)
+    type = models.CharField(max_length=30, null=True)
+    is_vegan = models.BooleanField(default=False, null=True)
+    is_glutenFree = models.BooleanField(default=False, null=True)
+    calories = models.PositiveIntegerField(null=True)
 
     def __str__(self):
         return self.name
