@@ -160,7 +160,8 @@ def recipe_view(request):
     #Test data because of api limits
     user = request.user
     data = recipe.read_json("SRPASTA1NNNNN_INFO")
-    id = recipe.read_json("SRPASTA1NNNNN")["id"]
+    nutrition_data = recipe.read_json("SRPASTA1NNNNN_N")
+    
     recipe_title = data["title"]
     summary = data["summary"]
     steps = data["instructions"]
@@ -169,10 +170,15 @@ def recipe_view(request):
     more_info = data["sourceUrl"]
     ingredents_list = data['extendedIngredients']
     recipe_img = data['image']
+    calories = nutrition_data['calories']
+    carbs = nutrition_data['carbs']
+    fat = nutrition_data['fat']
+    protein = nutrition_data['protein']
+
 
     ingredents= []
 
-    recipe.write_json(response= recipe.get_recipe_info_by_id(id = id),key = "SRPASTA1NNNNN_N")
+   
 
     for i in range(len(ingredents_list)):
        
@@ -190,7 +196,11 @@ def recipe_view(request):
         'cooking_time':cooking_time,
         'prep_time':prep_time,
         'more_info':more_info,
-        'ingredents':ingredents
+        'ingredents':ingredents,
+        'recipe_img':recipe_img,
+        'calories':calories,
+        'carbs':nutrition_data['fat'],
+        'protein':protein
         
     }
    
