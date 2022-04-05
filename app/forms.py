@@ -2,7 +2,7 @@ from pyexpat import model
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate
-from app.models import Account
+from app.models import Account, Recipe
 
 # Registration Form
 class RegisterForm(UserCreationForm):
@@ -33,3 +33,10 @@ class UpdateProfileForm(forms.ModelForm):
     class Meta:
         model = Account
         fields = ('first_name', 'last_name', 'bio', 'location')
+
+# Add Recipe Form
+class CreateRecipe(forms.ModelForm):
+    class Meta:
+        model = Recipe
+        fields = ('name', 'ingredients', 'steps', 'type', 'is_vegan', 'is_glutenFree', 'calories')
+        
