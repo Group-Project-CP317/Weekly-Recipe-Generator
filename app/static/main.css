@@ -351,3 +351,16 @@ h3 {
     font-size:  24px;
     font-weight: bold;
 }
+
+/*Search Page*/
+.searched {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.searched-recipe{
+    margin: 3% 0 3% 3%;
+    width: 450px;
+}

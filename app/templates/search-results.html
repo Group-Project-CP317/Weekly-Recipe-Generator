@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static %}
+
+<!-- Title -->
+{% block title %} Search Results {% endblock title %}
+
+<!-- Search Result -->
+{% block content %}
+<div class="searched">
+    {% with class='recipe searched-recipe' %}
+        {% include "components/recipe-card.html"  %}
+    {% endwith %}
+    {% with class='recipe searched-recipe' %}
+        {% include "components/recipe-card.html"  %}
+    {% endwith %}
+    {% with class='recipe searched-recipe' %}
+        {% include "components/recipe-card.html"  %}
+    {% endwith %}
+    {% with class='recipe searched-recipe' %}
+        {% include "components/recipe-card.html"  %}
+    {% endwith %}
+    {% with class='recipe searched-recipe' %}
+        {% include "components/recipe-card.html"  %}
+    {% endwith %}
+    {% with class='recipe searched-recipe' %}
+        {% include "components/recipe-card.html"  %}
+    {% endwith %}
+</div>
+{% endblock content %}
