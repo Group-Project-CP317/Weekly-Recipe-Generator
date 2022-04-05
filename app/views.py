@@ -86,6 +86,18 @@ def profile_view(request):
 
     return render(request, template_name, context)
 
+# Edit Profile View
+def edit_profile_view(request):
+    user = request.user
+
+    context = {
+        'user': user
+    }
+
+    template_name = 'edit-profile.html'
+
+    return render(request, template_name, context)
+
 # Create Recipe View
 def create_recipe_view(request):
     user = request.user
@@ -98,6 +110,7 @@ def create_recipe_view(request):
 
     return render(request, template_name, context)
 
+# Recipe View
 def recipe_view(request):
     user = request.user
     context = {
