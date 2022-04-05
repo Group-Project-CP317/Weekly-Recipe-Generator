@@ -11,7 +11,7 @@ Steps to run the application
 
 Create an account and add recipes or search for them
 
-Things that are not completed:
+Things that are completed:
 1. User creation
 2. Login/Logout
 3. Searching recipes in database
