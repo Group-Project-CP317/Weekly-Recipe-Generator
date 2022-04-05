@@ -8,7 +8,7 @@
 {% block content %}
 <div class="searched">
     {% for recipe in search_results %}
-        {% with class='recipe featured-recipe' name=recipe.name calories=recipe.calories %}
+        {% with name=recipe.name calories=recipe.calories %}
             {% include "components/recipe-card.html"  %}
         {% endwith %}
     {% endfor %}
