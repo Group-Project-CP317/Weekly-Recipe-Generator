@@ -19,7 +19,7 @@ Things that are completed:
 5. creating recipes
 
 Things that are not completed:
-1. random recipe not implented
+1. random recipe not implemented - (not possible in the time frame)
 2. image upload for recipe
 3. recipe favoriting
 4. using recipe's from api (we get the response and can parse the data, just needs to be pushed to template)
