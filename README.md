@@ -11,6 +11,9 @@ Steps to run the application
 
 Create an account and add recipes or search for them
 
+To view the login, register, profile, create-recipe:
+You can change the web address, like https://127.0.01:8000/login , https://127.0.0.1:8000/register , etc.
+
 Things that are completed:
 1. User creation
 2. Login/Logout
